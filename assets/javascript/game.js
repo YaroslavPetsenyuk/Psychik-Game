@@ -7,19 +7,19 @@ var guessesSoFar = [];
 document.onkeyup = function (event) {
 
     var userGuess = event.key;
-    var ranLetter = [Math.floor(Math.random() * letter.length)];
-    console.log(ranLetter);
+    var ranNumber = Math.floor(Math.random() * letter.length);
+    console.log(letter[ranNumber]);
 
     var userChoice = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
     if (userChoice.indexOf(userGuess) > -1) {
 
-        if (userGuess === ranLetter) {
+        if (userGuess === letter[ranNumber]) {
             wins++;
             guessesLeft = 10;
             guessesSoFar = []
         }
 
-        if (userGuess != ranLetter) {
+        if (userGuess != letter[ranNumber]) {
             guessesLeft--;
             guessesSoFar.push(userGuess);
         }
